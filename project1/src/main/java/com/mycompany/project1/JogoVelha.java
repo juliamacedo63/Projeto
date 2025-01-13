@@ -1,20 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.project1;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Aluno
  */
 public class JogoVelha extends javax.swing.JFrame {
-
-    /**
-     * Creates new form JogoVelha
-     */
+    boolean JogadorX = true;
+    boolean JogadorO = false;
+    int NumeroVitoriasX =0;
+    int NumeroVitoriasO= 0;
+    int NumeroEmpates =0;
+    
+    
     public JogoVelha() {
         initComponents();
+        setVisible(true);
+        
     }
 
     /**
@@ -27,19 +31,285 @@ public class JogoVelha extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        B2 = new javax.swing.JButton();
+        B3 = new javax.swing.JButton();
+        B5 = new javax.swing.JButton();
+        B6 = new javax.swing.JButton();
+        B4 = new javax.swing.JButton();
+        B7 = new javax.swing.JButton();
+        B8 = new javax.swing.JButton();
+        B9 = new javax.swing.JButton();
+        B1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        VitoriasJogadorX = new javax.swing.JLabel();
+        VitoriasJogadorO = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        Empates = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        NovoJogo = new javax.swing.JButton();
+        TelaPr = new javax.swing.JButton();
+        Sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
+
+        jPanel1.setBackground(new java.awt.Color(204, 102, 255));
+
+        jPanel2.setBackground(new java.awt.Color(204, 153, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        B2.setBackground(new java.awt.Color(102, 0, 153));
+        B2.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B2.setForeground(new java.awt.Color(255, 255, 255));
+        B2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B2ActionPerformed(evt);
+            }
+        });
+
+        B3.setBackground(new java.awt.Color(102, 0, 153));
+        B3.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B3.setForeground(new java.awt.Color(255, 255, 255));
+        B3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B3ActionPerformed(evt);
+            }
+        });
+
+        B5.setBackground(new java.awt.Color(102, 0, 153));
+        B5.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B5.setForeground(new java.awt.Color(255, 255, 255));
+        B5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B5ActionPerformed(evt);
+            }
+        });
+
+        B6.setBackground(new java.awt.Color(102, 0, 153));
+        B6.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B6.setForeground(new java.awt.Color(255, 255, 255));
+        B6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B6ActionPerformed(evt);
+            }
+        });
+
+        B4.setBackground(new java.awt.Color(102, 0, 153));
+        B4.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B4.setForeground(new java.awt.Color(255, 255, 255));
+        B4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B4ActionPerformed(evt);
+            }
+        });
+
+        B7.setBackground(new java.awt.Color(102, 0, 153));
+        B7.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B7.setForeground(new java.awt.Color(255, 255, 255));
+        B7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B7ActionPerformed(evt);
+            }
+        });
+
+        B8.setBackground(new java.awt.Color(102, 0, 153));
+        B8.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B8.setForeground(new java.awt.Color(255, 255, 255));
+        B8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B8ActionPerformed(evt);
+            }
+        });
+
+        B9.setBackground(new java.awt.Color(102, 0, 153));
+        B9.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B9.setForeground(new java.awt.Color(255, 255, 255));
+        B9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B9ActionPerformed(evt);
+            }
+        });
+
+        B1.setBackground(new java.awt.Color(102, 0, 153));
+        B1.setFont(new java.awt.Font("Arial Unicode MS", 1, 36)); // NOI18N
+        B1.setForeground(new java.awt.Color(255, 255, 255));
+        B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(B3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(B5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(B7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B9, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(204, 102, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Malgun Gothic", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel1.setText("Jogador X:");
+
+        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel2.setText("Jogador O:");
+
+        VitoriasJogadorX.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        VitoriasJogadorX.setText("Vitórias: 0");
+
+        VitoriasJogadorO.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        VitoriasJogadorO.setText("Vitórias: 0");
+
+        Empates.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        Empates.setText("Número de Empates: 0");
+
+        jPanel4.setBackground(new java.awt.Color(153, 0, 153));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Controle do Jogo:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
+
+        NovoJogo.setText("Novo Jogo");
+        NovoJogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NovoJogoActionPerformed(evt);
+            }
+        });
+
+        TelaPr.setText("Tela Principal");
+
+        Sair.setText("Sair");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TelaPr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NovoJogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 186, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NovoJogo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TelaPr)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Sair)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addComponent(jSeparator2)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(VitoriasJogadorX)
+                            .addComponent(VitoriasJogadorO)
+                            .addComponent(Empates)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(VitoriasJogadorX)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(VitoriasJogadorO)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Empates)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 423, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -50,11 +320,169 @@ public class JogoVelha extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    public void JogadorAtivo(){
+        JogadorX = !JogadorX; 
+    }
+    private void JogarNoBotao(JButton botao) {
+    if (botao.getText().equals("")) {  // Verifica se o botão está vazio
+        if (JogadorX) {
+            botao.setText("X");
+        } else {
+            botao.setText("O");
+        }
+        JogadorAtivo(); 
+        JogadorVencedor("X");
+        JogadorVencedor("O");
+    }
+    
+}
+    public void JogadorVencedor(String Jogador){
+    if (B1.getText().equals(Jogador) && B2.getText().equals(Jogador) && B3.getText().equals(Jogador)) {
+        if (B1.getText().equals("X"))
+            Vencedor("Jogador X");
+        else
+            Vencedor("Jogador O");
+    }
+
+    if (B4.getText().equals(Jogador) && B5.getText().equals(Jogador) && B6.getText().equals(Jogador)) {
+        if (B4.getText().equals("X"))
+            Vencedor("Jogador X");
+        else
+            Vencedor("Jogador O");
+    }
+
+    if (B7.getText().equals(Jogador) && B8.getText().equals(Jogador) && B9.getText().equals(Jogador)) {
+        if (B7.getText().equals("X"))
+            Vencedor("Jogador X");
+        else
+            Vencedor("Jogador O");
+    }
+
+    // Verificação das colunas
+    if (B1.getText().equals(Jogador) && B4.getText().equals(Jogador) && B7.getText().equals(Jogador)) {
+        if (B1.getText().equals("X"))
+            Vencedor("Jogador X");
+        else
+            Vencedor("Jogador O");
+    }
+
+    if (B2.getText().equals(Jogador) && B5.getText().equals(Jogador) && B8.getText().equals(Jogador)) {
+        if (B2.getText().equals("X"))
+            Vencedor("Jogador X");
+        else
+            Vencedor("Jogador O");
+    }
+
+    if (B3.getText().equals(Jogador) && B6.getText().equals(Jogador) && B9.getText().equals(Jogador)) {
+        if (B3.getText().equals("X"))
+            Vencedor("Jogador X");
+        else
+            Vencedor("Jogador O");
+    }
+
+    // Verificação das diagonais
+    if (B1.getText().equals(Jogador) && B5.getText().equals(Jogador) && B9.getText().equals(Jogador)) {
+        if (B1.getText().equals("X"))
+            Vencedor("Jogador X");
+        else
+            Vencedor("Jogador O");
+    }
+
+    if (B3.getText().equals(Jogador) && B5.getText().equals(Jogador) && B7.getText().equals(Jogador)) {
+        if (B3.getText().equals("X"))
+            Vencedor("Jogador X");
+        else
+            Vencedor("Jogador O");
+    }
+    if (!B1.getText().equals("") && !B2.getText().equals("") && !B3.getText().equals("")
+    && !B4.getText().equals("") && !B5.getText().equals("") && !B6.getText().equals("")
+    && !B7.getText().equals("") && !B8.getText().equals("") && !B9.getText().equals("")) {
+    Vencedor("Empate");
+    JogadorX = true;
+    JogadorO= false;
+    LimparCampos();
+}
+    }
+    public void Vencedor(String JogadorVencedor){
+        if(JogadorVencedor.equals("Jogador X")){
+            JOptionPane.showMessageDialog(null, "X Ganhou");
+            NumeroVitoriasX ++;
+            VitoriasJogadorX.setText("Vitórias:"+ NumeroVitoriasX);
+            LimparCampos();
+        }
+        else if(JogadorVencedor.equals("Jogador O")){
+            JOptionPane.showMessageDialog(null, "O Ganhou");
+            NumeroVitoriasO++;
+            VitoriasJogadorO.setText("Vitórias:"+ NumeroVitoriasX);
+            LimparCampos();
+        }
+        else if(JogadorVencedor.equals("Empate")){
+            JOptionPane.showMessageDialog(null, "Empate");
+            NumeroEmpates ++;
+            Empates.setText("Número de Empates: " + "" + NumeroEmpates);
+        }
+    }
+    public void LimparCampos(){
+        
+        B1.setText("");
+        B2.setText("");
+        B3.setText("");
+        B4.setText("");
+        B5.setText("");
+        B6.setText("");
+        B7.setText("");
+        B8.setText("");
+        B9.setText("");
+       
+        
+        
+    }
+    private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
+        JogarNoBotao(B1);
+    }//GEN-LAST:event_B1ActionPerformed
+
+    private void B2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2ActionPerformed
+        JogarNoBotao(B2);
+    }//GEN-LAST:event_B2ActionPerformed
+
+    private void B3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3ActionPerformed
+        JogarNoBotao(B3);
+    }//GEN-LAST:event_B3ActionPerformed
+
+    private void B4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4ActionPerformed
+        JogarNoBotao(B4);
+    }//GEN-LAST:event_B4ActionPerformed
+
+    private void B5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B5ActionPerformed
+        JogarNoBotao(B5);
+    }//GEN-LAST:event_B5ActionPerformed
+
+    private void B6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B6ActionPerformed
+        JogarNoBotao(B6);
+    }//GEN-LAST:event_B6ActionPerformed
+
+    private void B7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B7ActionPerformed
+        JogarNoBotao(B7);
+    }//GEN-LAST:event_B7ActionPerformed
+
+    private void B8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B8ActionPerformed
+        JogarNoBotao(B8);
+    }//GEN-LAST:event_B8ActionPerformed
+
+    private void B9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B9ActionPerformed
+        JogarNoBotao(B9);
+    }//GEN-LAST:event_B9ActionPerformed
+
+    private void NovoJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovoJogoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NovoJogoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -82,16 +510,41 @@ public class JogoVelha extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(JogoVelha.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JogoVelha().setVisible(true);
+                JogoVelha jogoVelha = new JogoVelha();
+                jogoVelha.setVisible(true);
+                jogoVelha.setResizable(false);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B1;
+    private javax.swing.JButton B2;
+    private javax.swing.JButton B3;
+    private javax.swing.JButton B4;
+    private javax.swing.JButton B5;
+    private javax.swing.JButton B6;
+    private javax.swing.JButton B7;
+    private javax.swing.JButton B8;
+    private javax.swing.JButton B9;
+    private javax.swing.JLabel Empates;
+    private javax.swing.JButton NovoJogo;
+    private javax.swing.JButton Sair;
+    private javax.swing.JButton TelaPr;
+    private javax.swing.JLabel VitoriasJogadorO;
+    private javax.swing.JLabel VitoriasJogadorX;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }

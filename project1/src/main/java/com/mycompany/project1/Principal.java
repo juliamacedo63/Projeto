@@ -38,6 +38,15 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tic-tac-toe.png"))); // NOI18N
         jLabel3.setText("jLabel3");
+        jLabel3.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jLabel3AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -109,6 +118,12 @@ public class Principal extends javax.swing.JFrame {
         JogodaVelha.setLocationRelativeTo(null); 
         dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel3AncestorAdded
+        JogoVelha JogoDaVelha = new JogoVelha();
+        JogoDaVelha.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel3AncestorAdded
 
     /**
      * @param args the command line arguments
