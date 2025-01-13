@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.project1;
 
 import javax.swing.JOptionPane;
@@ -33,9 +29,10 @@ public class TelaLogin extends javax.swing.JFrame {
         txtnome = new javax.swing.JTextField();
         NomeLogin = new javax.swing.JLabel();
         SenhaLogin = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BotaoEntrar = new javax.swing.JButton();
         txtsenha = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
+        BotaoLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,16 +55,27 @@ public class TelaLogin extends javax.swing.JFrame {
         SenhaLogin.setForeground(new java.awt.Color(255, 255, 255));
         SenhaLogin.setText("Senha:");
 
-        jButton1.setText("Entrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotaoEntrar.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        BotaoEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/digitar.png"))); // NOI18N
+        BotaoEntrar.setText("Entrar");
+        BotaoEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotaoEntrarActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Symbol", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("LOGIN");
+
+        BotaoLimpar.setFont(new java.awt.Font("Yu Gothic", 1, 12)); // NOI18N
+        BotaoLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancelar.png"))); // NOI18N
+        BotaoLimpar.setText("Limpar");
+        BotaoLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoLimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,6 +84,13 @@ public class TelaLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(109, 109, 109)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(SenhaLogin)
@@ -83,14 +98,11 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addComponent(txtnome)
                             .addComponent(NomeLogin)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(103, Short.MAX_VALUE))
+                        .addGap(72, 72, 72)
+                        .addComponent(BotaoEntrar)
+                        .addGap(50, 50, 50)
+                        .addComponent(BotaoLimpar)))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,15 +120,17 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotaoEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,19 +144,24 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnomeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEntrarActionPerformed
 
-        // TODO add your handling code here:
-       
         if(txtnome.getText().equals("NLT") && new String(txtsenha.getPassword()).equals("1234")){
-            Principal TelaPrincipal = new Principal();
-            TelaPrincipal.setVisible(true);
-            TelaPrincipal.setLocationRelativeTo(null);
-            
-        }
+            Principal TelaPrincipal= new Principal();
+            TelaPrincipal.setVisible(true); 
+            TelaPrincipal.setLocationRelativeTo(null); 
+            dispose();
+    }
         else{
-             JOptionPane.showMessageDialog(null, "Nome de Usuário ou Senha incoretos!", "Erro", JOptionPane.ERROR_MESSAGE);   }
-    }//GEN-LAST:event_jButton1ActionPerformed
+            JOptionPane.showMessageDialog(null, "Nome de usuário ou senha incorretos");
+        }
+    }//GEN-LAST:event_BotaoEntrarActionPerformed
+
+        
+    private void BotaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLimparActionPerformed
+        txtnome.setText("");
+        txtsenha.setText("");
+    }//GEN-LAST:event_BotaoLimparActionPerformed
 
     
     /**
@@ -176,18 +195,22 @@ public class TelaLogin extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                 TelaLogin telaLogin = new TelaLogin();  // Cria a instância da tela
-                telaLogin.setVisible(true);  // Torna a tela visível
-                telaLogin.setLocationRelativeTo(null);  // Centraliza a janela
+                TelaLogin telaLogin = new TelaLogin(); 
+                telaLogin.setVisible(true); 
+                telaLogin.setLocationRelativeTo(null); 
+                telaLogin.setResizable(false);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoEntrar;
+    private javax.swing.JButton BotaoLimpar;
     private javax.swing.JLabel NomeLogin;
     private javax.swing.JLabel SenhaLogin;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
