@@ -30,6 +30,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         Imagem_Calculadora = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
@@ -89,8 +93,37 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Imagem_Calculadora)
                     .addComponent(jLabel3))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
+
+        jMenuBar1.setBackground(new java.awt.Color(204, 204, 255));
+        jMenuBar1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+
+        jMenu1.setBackground(new java.awt.Color(153, 153, 255));
+        jMenu1.setText("Menu");
+        jMenu1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jMenuItem1.setText("Tela de Login");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jMenuItem2.setText("Sair");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,7 +145,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_Imagem_CalculadoraMouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
+       
         JogoVelha JogodaVelha = new JogoVelha();
         JogodaVelha.setVisible(true); 
         JogodaVelha.setLocationRelativeTo(null); 
@@ -120,10 +153,20 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel3AncestorAdded
-        JogoVelha JogoDaVelha = new JogoVelha();
-        JogoDaVelha.setVisible(true);
-        dispose();
+      
     }//GEN-LAST:event_jLabel3AncestorAdded
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        TelaLogin TelaLogin =new TelaLogin();
+        TelaLogin.setVisible(true);
+        TelaLogin.setLocationRelativeTo(null); 
+        TelaLogin.setResizable(false);
+        dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,7 +198,10 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                Principal Principal = new Principal();
+                Principal.setVisible(true);
+                Principal.setLocationRelativeTo(null); 
+                Principal.setResizable(false);
             }
         });
     }
@@ -164,6 +210,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel Imagem_Calculadora;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
